@@ -18,6 +18,7 @@ resource "kubernetes_service" "test_service" {
     port {
       port        = 8080
       target_port = 8080
+      node_port   = 30001
     }
 
     type = "NodePort"
@@ -44,22 +45,3 @@ resource "kubernetes_pod" "jenkins" {
     }
   }
 }
-
-# provider "jenkins" {
-#   server_url = "http://localhost:8080/"
-#   username   = "user1"
-#   password   = "user1"
-# }
-
-
-# resource "jenkins_job" "first" {
-#   name         = "TerrTest"
-#   display_name = "First terraform test"
-#   description  = "This makes a project using terraform"
-#   disabled     = false
-
-
-#   parameters = {}
-#   template   = "file://./job_config.xml"
-# }
-
