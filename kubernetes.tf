@@ -6,7 +6,7 @@ provider "kubernetes" {
 }
 
 output "port" {
-  value = "${kubernetes_service.jenkins.spec.0.port.0.node_port}"
+  value = "4"
 }
 
 resource "kubernetes_service" "test_service" {
