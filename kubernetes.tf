@@ -5,9 +5,13 @@ provider "kubernetes" {
   insecure               = "true"
 }
 
+output "port" {
+  value = "${kubernetes_service.jenkins.spec.0.port.0.node_port}"
+}
+
 resource "kubernetes_service" "test_service" {
   metadata {
-    name = "${var.name}"
+    name = "jenkins"
   }
 
   spec {
