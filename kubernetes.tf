@@ -6,10 +6,10 @@ provider "kubernetes" {
 }
 
 output "port" {
-  value = "4"
+  value = "${kubernetes_service.jenkins.spec.0.port.0.node_port}"
 }
 
-resource "kubernetes_service" "test_service" {
+resource "kubernetes_service" "jenkins" {
   metadata {
     name = "jenkins"
   }
