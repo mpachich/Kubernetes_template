@@ -41,7 +41,7 @@ resource "kubernetes_pod" "jenkins" {
 
   spec {
     container {
-      image = "mpachich/terrafor-jenkins:1"
+      image = "mpachich/jenkins:2"
       name  = "example"
 
       port {
