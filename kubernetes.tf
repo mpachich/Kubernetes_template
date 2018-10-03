@@ -41,7 +41,7 @@ resource "kubernetes_pod" "jenkins" {
 
   spec {
     container {
-      image = "mpachich/jenkins:2"
+      image = "jenkins/jenkins:latest"
       name  = "example"
 
       # env = {
