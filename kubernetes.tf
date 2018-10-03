@@ -32,7 +32,7 @@ resource "kubernetes_service" "jenkins" {
 
 resource "kubernetes_pod" "jenkins" {
   metadata {
-    name = "${var.name}"
+    name = "${var.pod_name}"
 
     labels {
       app = "jenkins"

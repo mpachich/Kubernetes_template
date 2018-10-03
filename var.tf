@@ -11,6 +11,6 @@ variable "k8s_config_context_cluster" {
   default     = "mycluster.icp"
 }
 
-variable "name" {
+variable "pod_name" {
   description = "Name of kubernets service/pod"
 }
