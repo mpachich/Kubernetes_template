@@ -45,7 +45,7 @@ resource "kubernetes_pod" "jenkins" {
       name  = "example"
 
       env = {
-        CASC_JENKINS_CONFIG = ""
+        CASC_JENKINS_CONFIG = "https://github.com/mpachich/Kubernetes_template/blob/master/config.yaml"
       }
 
       port {
