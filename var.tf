@@ -13,5 +13,4 @@ variable "k8s_config_context_cluster" {
 
 variable "name" {
   description = "Name of kubernets service/pod"
-  default     = "random-name"
 }
