@@ -44,6 +44,10 @@ resource "kubernetes_pod" "jenkins" {
       image = "mpachich/jenkins:2"
       name  = "example"
 
+      env = {
+        CASC_JENKINS_CONFIG = ""
+      }
+
       port {
         container_port = 80
       }
