@@ -1,47 +1,21 @@
-plugins:
-  sites:
-  - id: "default"
-    url: "https://updates.jenkins.io/update-center.json"
-jenkins:
-  agentProtocols:
-  - "JNLP4-connect"
-  - "Ping"
-  authorizationStrategy: unsecured
-  crumbIssuer:
-    standard:
-      excludeClientIPFromCrumb: false
-  disableRememberMe: false
-  mode: NORMAL
-  numExecutors: 2
-  primaryView:
-    all:
-      name: "all"
-  quietPeriod: 5
-  scmCheckoutRetryCount: 0
-  securityRealm:
-    local:
-      allowsSignup: false
-      enableCaptcha: false
-      users:
-      - id: "admin"
-  slaveAgentPort: 50000
-  views:
-  - all:
-      name: "all"
-security:
-  remotingCLI:
-    enabled: false
+jenkins: 
+  [...]
+credentials:
+  system:
+    domainCredentials:
+      - credentials:
+          - gitLabApiTokenImpl:
+              scope: SYSTEM
+              id: gitlab_token
+              apiToken: "qwertyuiopasdfghjklzxcvbnm"
+              description: "Gitlab Token"
 unclassified:
-  location:
-    url: "http://9.30.96.162:30067/"
-tool:
-  git:
-    installations:
-    - home: "git"
-      name: "Default"
-  jdk:
-    defaultProperties:
-    - installSource:
-        installers:
-        - jdkInstaller:
-            acceptLicense: false
+  gitlabconnectionconfig:
+    connections:
+    - apiTokenId: gitlab_token
+      clientBuilderId: "autodetect"
+      connectionTimeout: 20
+      ignoreCertificateErrors: true
+      name: "my_gitlab_server"
+      readTimeout: 10
+      url: "https://gitlab.com/"
