@@ -6,7 +6,7 @@ jenkins:
   agentProtocols:
   - "JNLP4-connect"
   - "Ping"
-  authorizationStrategy: unsecured
+  # authorizationStrategy: unsecured
   crumbIssuer:
     standard:
       excludeClientIPFromCrumb: false
