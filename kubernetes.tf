@@ -11,7 +11,7 @@ output "port" {
 
 resource "kubernetes_service" "jenkins" {
   metadata {
-    name = "jenkins1"
+    name = "jenkins"
   }
 
   spec {
@@ -46,7 +46,7 @@ resource "kubernetes_pod" "jenkins" {
 
       env = {
         name  = "CASC_JENKINS_CONFIG"
-        value = "https://github.com/mpachich/Kubernetes_template/blob/master/config.yaml"
+        value = "http://github.com/mpachich/Kubernetes_template/blob/master/config.yaml"
       }
 
       port {
