@@ -11,7 +11,7 @@ output "port" {
 
 resource "kubernetes_service" "jenkins" {
   metadata {
-    name = "jenkins"
+    name = "jenkins-"
   }
 
   spec {
